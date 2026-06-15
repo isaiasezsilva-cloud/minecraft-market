@@ -5,6 +5,10 @@ function App() {
   const [productos, setProductos] = useState([])
   const [filtro, setFiltro] = useState('todos')
   const [cargando, setCargando] = useState(true)
+  const [carrito, setCarrito] = useState([])
+  const [mostrarCarrito, setMostrarCarrito] = useState(false)
+  const [distancia, setDistancia] = useState(100)
+  const [mostrarCalculadora, setMostrarCalculadora] = useState(false)
 
   useEffect(() => {
     fetch('./productos.json')
@@ -23,6 +27,44 @@ function App() {
     ? productos 
     : productos.filter(p => p.categoria === filtro)
 
+  const agregarAlCarrito = (producto) => {
+    const existente = carrito.find(item => item.id === producto.id)
+    if (existente) {
+      setCarrito(carrito.map(item => 
+        item.id === producto.id 
+          ? { ...item, cantidad: item.cantidad + 1 }
+          : item
+      ))
+    } else {
+      setCarrito([...carrito, { ...producto, cantidad: 1 }])
+    }
+  }
+
+  const removerDelCarrito = (productoId) => {
+    setCarrito(carrito.filter(item => item.id !== productoId))
+  }
+
+  const actualizarCantidad = (productoId, nuevaCantidad) => {
+    if (nuevaCantidad <= 0) {
+      removerDelCarrito(productoId)
+      return
+    }
+    setCarrito(carrito.map(item =>
+      item.id === productoId
+        ? { ...item, cantidad: nuevaCantidad }
+        : item
+    ))
+  }
+
+  const subtotal = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0)
+  
+  // Cálculo de envío: 0.01 esmeraldas por bloque de distancia
+  // Mínimo 5 esmeraldas, máximo 50 esmeraldas
+  const costoEnvio = Math.min(Math.max(distancia * 0.01, 5), 50)
+  const total = subtotal + costoEnvio
+
+  const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0)
+
   return (
     <div className="minecraft-market">
       <header className="header">
@@ -34,7 +76,96 @@ function App() {
           </h1>
           <p className="subtitle">El mercado de la aldea - Productos épicos para aventureros</p>
         </div>
+        <button 
+          className="btn-carrito-header"
+          onClick={() => setMostrarCarrito(!mostrarCarrito)}
+        >
+          🛒 Carrito ({totalItems})
+        </button>
       </header>
+
+      {mostrarCarrito && (
+        <div className="carrito-overlay" onClick={() => setMostrarCarrito(false)}>
+          <div className="carrito-modal" onClick={e => e.stopPropagation()}>
+            <button className="btn-cerrar" onClick={() => setMostrarCarrito(false)}>×</button>
+            <h2>🛒 Tu Carrito</h2>
+            
+            {carrito.length === 0 ? (
+              <p className="carrito-vacio">Tu carrito está vacío</p>
+            ) : (
+              <>
+                <div className="carrito-items">
+                  {carrito.map(item => (
+                    <div key={item.id} className="carrito-item">
+                      <img src={item.imagen} alt={item.nombre} />
+                      <div className="carrito-info">
+                        <h4>{item.nombre}</h4>
+                        <p>{item.precio.toFixed(2)} 🟢 x {item.cantidad}</p>
+                      </div>
+                      <div className="carrito-controles">
+                        <button onClick={() => actualizarCantidad(item.id, item.cantidad - 1)}>-</button>
+                        <span>{item.cantidad}</span>
+                        <button onClick={() => actualizarCantidad(item.id, item.cantidad + 1)}>+</button>
+                      </div>
+                      <button 
+                        className="btn-remover"
+                        onClick={() => removerDelCarrito(item.id)}
+                      >
+                        🗑️
+                      </button>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="calculadora-envio">
+                  <button 
+                    className="btn-calculadora"
+                    onClick={() => setMostrarCalculadora(!mostrarCalculadora)}
+                  >
+                    {mostrarCalculadora ? '🔺 Ocultar calculadora' : '📍 Calcular envío'}
+                  </button>
+                  
+                  {mostrarCalculadora && (
+                    <div className="calculadora-contenido">
+                      <label>
+                        📏 Distancia desde la aldea (en bloques):
+                        <input 
+                          type="number" 
+                          value={distancia}
+                          onChange={(e) => setDistancia(Math.max(1, parseInt(e.target.value) || 1))}
+                          min="1"
+                        />
+                      </label>
+                      <p className="formula-info">
+                        Fórmula: <code>costo = distancia × 0.01</code> (mín: 5🟢, máx: 50🟢)
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                <div className="carrito-totales">
+                  <div className="total-row">
+                    <span>Subtotal:</span>
+                    <span>{subtotal.toFixed(2)} 🟢</span>
+                  </div>
+                  <div className="total-row">
+                    <span>Envío ({distancia} bloques):</span>
+                    <span>{costoEnvio.toFixed(2)} 🟢</span>
+                  </div>
+                  <div className="total-row total-final">
+                    <span>Total:</span>
+                    <span>{total.toFixed(2)} 🟢</span>
+                  </div>
+                </div>
+
+                <button className="btn-checkout" onClick={() => alert('¡Gracias por tu compra! Los aldeanos están preparando tu pedido.')}>
+                  ✅ Finalizar Compra
+                </button>
+              </>
+            )}
+          </div>
+        </div>
+      )}
 
       <nav className="filtros">
         <button 
@@ -93,7 +224,11 @@ function App() {
 
             <div className="grid-productos">
               {productosFiltrados.map(producto => (
-                <ProductoCard key={producto.id} producto={producto} />
+                <ProductoCard 
+                  key={producto.id} 
+                  producto={producto} 
+                  onAgregar={agregarAlCarrito}
+                />
               ))}
             </div>
           </>
@@ -102,13 +237,15 @@ function App() {
 
       <footer className="footer">
         <p>🏰 MinecraftMarket - Actividad Formativa N°2 - Algoritmos y Estructuras de Datos 2026</p>
-        <p className="footer-note">Temática: Fantasy Shop | Registro con clave: <code>id</code></p>
+        <p className="footer-note">Temática: Fantasy Shop | Registro con clave: <code>id</code> | Envío: <code>distancia × 0.01</code></p>
       </footer>
     </div>
   )
 }
 
-function ProductoCard({ producto }) {
+function ProductoCard({ producto, onAgregar }) {
+  const [mostrarResenas, setMostrarResenas] = useState(false)
+
   return (
     <article className="producto-card">
       <div className="producto-header">
@@ -150,42 +287,41 @@ function ProductoCard({ producto }) {
           </div>
           <span className="calificacion-numero">({producto.calificacion}/5)</span>
         </div>
+
+        <button 
+          className="btn-agregar-carrito"
+          onClick={() => onAgregar(producto)}
+        >
+          🛒 Agregar al carrito
+        </button>
       </div>
 
-      <Resenas resenas={producto.resenas} />
-    </article>
-  )
-}
-
-function Resenas({ resenas }) {
-  const [mostrar, setMostrar] = useState(false)
-
-  return (
-    <div className="resenas-section">
-      <button 
-        className="btn-resenas"
-        onClick={() => setMostrar(!mostrar)}
-      >
-        {mostrar ? '🔺 Ocultar reseñas' : '🔽 Ver reseñas de aldeanos'}
-      </button>
-      
-      {mostrar && (
-        <div className="resenas-list">
-          {resenas.map((resena, index) => (
-            <div key={index} className="resena-card">
-              <div className="aldeano-header">
-                <img src={resena.foto} alt={resena.aldeano} className="aldeano-foto" />
-                <div className="aldeano-info">
-                  <span className="aldeano-nombre">{resena.aldeano}</span>
-                  <span className="aldeano-badge">🏠 Aldeano verificado</span>
+      <div className="resenas-section">
+        <button 
+          className="btn-resenas"
+          onClick={() => setMostrarResenas(!mostrarResenas)}
+        >
+          {mostrarResenas ? '🔺 Ocultar reseñas' : '🔽 Ver reseñas de aldeanos'}
+        </button>
+        
+        {mostrarResenas && (
+          <div className="resenas-list">
+            {producto.resenas.map((resena, index) => (
+              <div key={index} className="resena-card">
+                <div className="aldeano-header">
+                  <img src={resena.foto} alt={resena.aldeano} className="aldeano-foto" />
+                  <div className="aldeano-info">
+                    <span className="aldeano-nombre">{resena.aldeano}</span>
+                    <span className="aldeano-badge">🏠 Aldeano verificado</span>
+                  </div>
                 </div>
+                <p className="resena-comentario">"{resena.comentario}"</p>
               </div>
-              <p className="resena-comentario">"{resena.comentario}"</p>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+            ))}
+          </div>
+        )}
+      </div>
+    </article>
   )
 }
 
