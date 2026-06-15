@@ -9,22 +9,22 @@
       "descripcion": "Espada legendaria forjada con diamantes puros del Nether. Incluye encantamiento de Filo V y Durabilidad III. Ideal para enfrentar creepers y enderman.",
       "categoria": "armamento",
       "calificacion": 5,
-      "imagen": "https://minecraft.wiki/images/Diamond_Sword_JE3_BE3.png",
+      "imagen": "https://static.wikia.nocookie.net/minecraft_wiki/images/0/05/Diamond_Sword_JE3_BE3.png",
       "resenas": [
         {
           "aldeano": "Aldemar el Herrero",
-          "foto": "https://minecraft.wiki/images/Smith_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/9/9b/Smith_Villager_JE1.png",
           "comentario": "¡La mejor espada que he forjado en 20 años! Los clientes vuelven por más."
         },
         {
           "aldeano": "Bruno el Guerrero",
-          "foto": "https://minecraft.wiki/images/Armorer_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/3/3e/Armorer_Villager_JE1.png",
           "comentario": "Derroté al Ender Dragon con esta belleza. 100% recomendada."
         }
       ]
     },
     {
-      "id": "ARCO_HIERRO_002",
+      "id": "ARCO_MADERA_002",
       "nombre": "Arco de Madera Reforzado",
       "precio": 18.50,
       "stock": 22,
@@ -32,16 +32,16 @@
       "descripcion": "Arco tradicional de madera reforzada. Incluye 32 flechas. Perfecto para cazar a distancia y defender la aldea.",
       "categoria": "armamento",
       "calificacion": 4,
-      "imagen": "https://minecraft.wiki/images/Bow_JE2_BE2.png",
+      "imagen": "https://static.wikia.nocookie.net/minecraft_wiki/images/9/99/Bow_JE2_BE2.png",
       "resenas": [
         {
           "aldeano": "Carla la Cazadora",
-          "foto": "https://minecraft.wiki/images/Fletcher_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/f/f2/Fletcher_Villager_JE1.png",
           "comentario": "Precisión increíble. Le di a un esqueleto desde 50 bloques."
         },
         {
           "aldeano": "Daniel el Explorador",
-          "foto": "https://minecraft.wiki/images/Smith_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/9/9b/Smith_Villager_JE1.png",
           "comentario": "Bueno pero las flechas se acaban rápido. Lleven repuestos."
         }
       ]
@@ -55,16 +55,16 @@
       "descripcion": "Manzana bañada en oro de los mejores yacimientos. Otorga regeneración II, resistencia al fuego y absorción de daño por 2 minutos.",
       "categoria": "comida",
       "calificacion": 5,
-      "imagen": "https://minecraft.wiki/images/Enchanted_Golden_Apple_JE2_BE2.png",
+      "imagen": "https://static.wikia.nocookie.net/minecraft_wiki/images/1/19/Enchanted_Golden_Apple_JE2_BE2.png",
       "resenas": [
         {
           "aldeano": "Elena la Cocinera",
-          "foto": "https://minecraft.wiki/images/Butcher_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/2/24/Butcher_Villager_JE1.png",
           "comentario": "Me salvó la vida en el Nether. Vale cada pepita de oro."
         },
         {
           "aldeano": "Federico el Aventurero",
-          "foto": "https://minecraft.wiki/images/Armorer_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/3/3e/Armorer_Villager_JE1.png",
           "comentario": "Imprescindible para raids. Compré 10 y no me arrepiento."
         }
       ]
@@ -78,16 +78,16 @@
       "descripcion": "Poción brewada con cuidado por maestros alquimistas. Aumenta el daño cuerpo a cuerpo un 130% durante 3 minutos.",
       "categoria": "comida",
       "calificacion": 4,
-      "imagen": "https://minecraft.wiki/images/Potion_of_Strength_JE2_BE2.png",
+      "imagen": "https://static.wikia.nocookie.net/minecraft_wiki/images/a/a2/Potion_of_Strength_JE2_BE2.png",
       "resenas": [
         {
           "aldeano": "Gustavo el Alquimista",
-          "foto": "https://minecraft.wiki/images/Cleric_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/4/42/Cleric_Villager_JE1.png",
           "comentario": "La preparo yo mismo. Calidad garantizada o te devuelvo los esmeraldas."
         },
         {
           "aldeano": "Helena la Guerrera",
-          "foto": "https://minecraft.wiki/images/Armorer_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/3/3e/Armorer_Villager_JE1.png",
           "comentario": "Con esta poción derroté a un Ravager de un golpe."
         }
       ]
@@ -101,16 +101,16 @@
       "descripcion": "Herramienta esencial para mineros profesionales. Incluye Eficiencia V y Fortuna III. Mina obsidiana en segundos.",
       "categoria": "objetos",
       "calificacion": 5,
-      "imagen": "https://minecraft.wiki/images/Diamond_Pickaxe_JE3_BE3.png",
+      "imagen": "https://static.wikia.nocookie.net/minecraft_wiki/images/9/98/Diamond_Pickaxe_JE3_BE3.png",
       "resenas": [
         {
           "aldeano": "Ignacio el Minero",
-          "foto": "https://minecraft.wiki/images/Smith_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/9/9b/Smith_Villager_JE1.png",
           "comentario": "Miné 5 stacks de diamantes en una tarde. Bestial."
         },
         {
           "aldeano": "Julia la Constructora",
-          "foto": "https://minecraft.wiki/images/Fletcher_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/f/f2/Fletcher_Villager_JE1.png",
           "comentario": "Lo uso para construir mega bases. No se rompe nunca."
         }
       ]
@@ -124,16 +124,16 @@
       "descripcion": "Set completo (casco, peto, grebas, botas). Protege contra el 60% del daño. Incluye Protección II en todas las piezas.",
       "categoria": "armamento",
       "calificacion": 4,
-      "imagen": "https://minecraft.wiki/images/Iron_Chestplate_JE2_BE2.png",
+      "imagen": "https://static.wikia.nocookie.net/minecraft_wiki/images/6/64/Iron_Chestplate_JE2_BE2.png",
       "resenas": [
         {
           "aldeano": "Kevin el Defensor",
-          "foto": "https://minecraft.wiki/images/Armorer_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/3/3e/Armorer_Villager_JE1.png",
           "comentario": "Sobreviví a una raid completa con esto. Muy resistente."
         },
         {
           "aldeano": "Laura la Viajera",
-          "foto": "https://minecraft.wiki/images/Butcher_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/2/24/Butcher_Villager_JE1.png",
           "comentario": "Un poco pesada pero vale la pena para explorar cuevas."
         }
       ]
@@ -147,16 +147,16 @@
       "descripcion": "Pack de 16 perlas obtenidas de enderman del End. Esenciales para activar el portal y viajar instantáneamente.",
       "categoria": "objetos",
       "calificacion": 5,
-      "imagen": "https://minecraft.wiki/images/Ender_Pearl_JE2_BE2.png",
+      "imagen": "https://static.wikia.nocookie.net/minecraft_wiki/images/2/27/Ender_Pearl_JE2_BE2.png",
       "resenas": [
         {
           "aldeano": "Martín el Viajero",
-          "foto": "https://minecraft.wiki/images/Cleric_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/4/42/Cleric_Villager_JE1.png",
           "comentario": "Las uso para escapar de situaciones peligrosas. Salvavidas."
         },
         {
           "aldeano": "Natalia la Speedrunner",
-          "foto": "https://minecraft.wiki/images/Fletcher_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/f/f2/Fletcher_Villager_JE1.png",
           "comentario": "Imprescindibles para cualquier speedrun. Llegué al End en 15 min."
         }
       ]
@@ -170,16 +170,16 @@
       "descripcion": "Pack de 10 bloques de TNT. Ideales para minería a gran escala o defender tu aldea de invasiones. ¡Usar con precaución!",
       "categoria": "objetos",
       "calificacion": 4,
-      "imagen": "https://minecraft.wiki/images/TNT_JE2_BE2.png",
+      "imagen": "https://static.wikia.nocookie.net/minecraft_wiki/images/2/29/TNT_JE2_BE2.png",
       "resenas": [
         {
           "aldeano": "Oscar el Demolitor",
-          "foto": "https://minecraft.wiki/images/Smith_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/9/9b/Smith_Villager_JE1.png",
           "comentario": "Volé una montaña entera para mi mega base. Satisfactorio."
         },
         {
           "aldeano": "Patricia la Granjera",
-          "foto": "https://minecraft.wiki/images/Farmer_Villager_JE1.png",
+          "foto": "https://static.wikia.nocookie.net/minecraft_wiki/images/7/7b/Farmer_Villager_JE1.png",
           "comentario": "Cuidado donde la ponen. Casi destruyen mi cultivo de trigo."
         }
       ]
