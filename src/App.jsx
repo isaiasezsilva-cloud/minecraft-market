@@ -50,12 +50,8 @@ function App() {
   }
 
   const subtotal = carrito.reduce((sum, item) => sum + (item.precio * item.cantidad), 0)
-  
-  // Cálculo de envío: 0.01 esmeraldas por bloque de distancia
-  // Mínimo 5 esmeraldas, máximo 50 esmeraldas
   const costoEnvio = Math.min(Math.max(distancia * 0.01, 5), 50)
   const total = subtotal + costoEnvio
-
   const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0)
 
   return (
@@ -73,7 +69,9 @@ function App() {
           className="btn-carrito-header"
           onClick={() => setMostrarCarrito(!mostrarCarrito)}
         >
-          🛒 Carrito ({totalItems})
+          <span className="carrito-icon">🛒</span>
+          <span className="carrito-text">Carrito</span>
+          <span className="carrito-count">{totalItems}</span>
         </button>
       </header>
 
