@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import productosData from '../public/productos.json'
 import './App.css'
 
 function App() {
@@ -11,16 +12,8 @@ function App() {
   const [mostrarCalculadora, setMostrarCalculadora] = useState(false)
 
   useEffect(() => {
-    fetch('./productos.json')
-      .then(res => res.json())
-      .then(data => {
-        setProductos(data.productos)
-        setCargando(false)
-      })
-      .catch(err => {
-        console.error('Error al cargar productos:', err)
-        setCargando(false)
-      })
+    setProductos(productosData.productos)
+    setCargando(false)
   }, [])
 
   const productosFiltrados = filtro === 'todos' 
