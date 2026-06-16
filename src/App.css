@@ -49,6 +49,11 @@ body {
   padding: 20px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 
 .header-content {
@@ -86,9 +91,6 @@ body {
 
 /* Botón de Carrito estilo Minecraft */
 .btn-carrito-header {
-  position: absolute;
-  top: 20px;
-  right: 20px;
   background: linear-gradient(135deg, var(--mc-emerald) 0%, #008800 100%);
   border: 4px solid #000;
   padding: 12px 20px;
@@ -105,6 +107,8 @@ body {
   font-size: 1rem;
   color: #fff;
   text-shadow: 2px 2px 0 #000;
+  position: relative;
+  margin-top: 10px;
 }
 
 .btn-carrito-header:active {
@@ -134,8 +138,259 @@ body {
   font-size: 0.9rem;
 }
 
-.header {
+/* Carrito Modal */
+.carrito-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.carrito-modal {
+  background: linear-gradient(135deg, var(--mc-panel) 0%, var(--mc-panel-dark) 100%);
+  border: 4px solid #000;
+  border-radius: 8px;
+  padding: 25px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   position: relative;
+}
+
+.carrito-modal h2 {
+  color: var(--mc-text-dark);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.btn-cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: var(--mc-stone);
+  color: #fff;
+  border: 3px solid #000;
+  width: 35px;
+  height: 35px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  line-height: 1;
+  box-shadow: inset -2px -2px 0 rgba(0,0,0,0.5), inset 2px 2px 0 rgba(255,255,255,0.3);
+}
+
+.btn-cerrar:hover {
+  background: #ff4444;
+}
+
+.carrito-vacio {
+  text-align: center;
+  color: var(--mc-text-dark);
+  padding: 40px;
+  font-size: 1.2rem;
+}
+
+.carrito-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.carrito-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 15px;
+  border-radius: 4px;
+  border: 2px solid var(--mc-wood);
+}
+
+.carrito-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.carrito-info {
+  flex: 1;
+}
+
+.carrito-info h4 {
+  color: var(--mc-text-dark);
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+}
+
+.carrito-info p {
+  color: var(--mc-emerald);
+  font-weight: bold;
+  margin: 0;
+}
+
+.carrito-controles {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.carrito-controles button {
+  background: var(--mc-stone);
+  color: #fff;
+  border: 2px solid #000;
+  width: 30px;
+  height: 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.carrito-controles button:hover {
+  background: var(--mc-dirt);
+}
+
+.carrito-controles span {
+  min-width: 30px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--mc-text-dark);
+}
+
+.btn-remover {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 5px;
+}
+
+.btn-remover:hover {
+  transform: scale(1.2);
+}
+
+.calculadora-envio {
+  margin: 20px 0;
+}
+
+.btn-calculadora {
+  width: 100%;
+  background: var(--mc-wood);
+  color: #fff;
+  border: 3px solid #000;
+  padding: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-shadow: inset -3px -3px 0 rgba(0,0,0,0.5), inset 3px 3px 0 rgba(255,255,255,0.2);
+}
+
+.btn-calculadora:hover {
+  background: var(--mc-dirt);
+}
+
+.calculadora-contenido {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 4px;
+  margin-top: 10px;
+  border: 2px solid var(--mc-stone);
+}
+
+.calculadora-contenido label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--mc-text);
+  font-weight: bold;
+}
+
+.calculadora-contenido input {
+  background: var(--mc-panel);
+  border: 3px solid #000;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 4px;
+  color: var(--mc-text-dark);
+}
+
+.formula-info {
+  color: var(--mc-sand);
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+.formula-info code {
+  background: var(--mc-obsidian);
+  padding: 2px 8px;
+  border-radius: 3px;
+  color: var(--mc-diamond);
+}
+
+.carrito-totales {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 15px;
+  border-radius: 4px;
+  border: 2px solid var(--mc-emerald);
+  margin-bottom: 20px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  color: var(--mc-text);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.total-row:last-child {
+  border-bottom: none;
+}
+
+.total-row.total-final {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--mc-diamond);
+  border-top: 2px solid var(--mc-emerald);
+  margin-top: 10px;
+  padding-top: 15px;
+}
+
+.btn-checkout {
+  width: 100%;
+  background: linear-gradient(135deg, var(--mc-emerald) 0%, #008800 100%);
+  color: #fff;
+  border: 4px solid #000;
+  padding: 15px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  box-shadow: inset -4px -4px 0 rgba(0,0,0,0.5), inset 4px 4px 0 rgba(255,255,255,0.2), 4px 4px 0 #000;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-checkout:hover {
+  background: linear-gradient(135deg, #00cc00 0%, var(--mc-emerald) 100%);
+}
+
+.btn-checkout:active {
+  transform: translate(2px, 2px);
+  box-shadow: inset -2px -2px 0 rgba(0,0,0,0.5), inset 2px 2px 0 rgba(255,255,255,0.2), 2px 2px 0 #000;
 }
 
 /* Filtros */
@@ -502,6 +757,23 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .titulo {
+    font-size: 1.5rem;
+  }
+  
+  .header {
+    padding: 15px 10px;
+  }
+  
+  .btn-carrito-header {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .carrito-text {
+    display: none;
+  }
+  
+  .carrito-icon {
     font-size: 1.8rem;
   }
   
@@ -516,11 +788,61 @@ body {
   
   .grid-productos {
     grid-template-columns: 1fr;
+    padding: 10px;
   }
   
   .producto-header {
     flex-direction: column;
     gap: 8px;
     text-align: center;
+  }
+  
+  /* Carrito modal responsive */
+  .carrito-modal {
+    width: 95% !important;
+    max-width: 95% !important;
+    padding: 15px !important;
+  }
+  
+  .carrito-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  
+  .carrito-item img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  
+  .carrito-controles {
+    justify-content: center;
+  }
+  
+  .total-row {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 1.2rem;
+  }
+  
+  .titulo-icon {
+    font-size: 1.2rem;
+  }
+  
+  .subtitle {
+    font-size: 0.8rem;
+  }
+  
+  .btn-carrito-header {
+    padding: 8px 12px;
+  }
+  
+  .carrito-count {
+    padding: 2px 6px;
+    font-size: 0.8rem;
   }
 }
