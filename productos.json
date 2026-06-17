@@ -36,7 +36,7 @@
       "resenas": [
         {
           "aldeano": "Carla la Cazadora",
-          "foto": "./images/aldeano_fletcher.png",
+          "foto": "./images/aldeana_alex_fletcher.png",
           "comentario": "Precisión increíble. Le di a un esqueleto desde 50 bloques."
         },
         {
@@ -59,7 +59,7 @@
       "resenas": [
         {
           "aldeano": "Elena la Cocinera",
-          "foto": "./images/aldeano_butcher.png",
+          "foto": "./images/aldeana_alex_butcher.png",
           "comentario": "Me salvó la vida en el Nether. Vale cada pepita de oro."
         },
         {
@@ -87,7 +87,7 @@
         },
         {
           "aldeano": "Helena la Guerrera",
-          "foto": "./images/aldeano_armorer.png",
+          "foto": "./images/aldeana_alex_armorer.png",
           "comentario": "Con esta poción derroté a un Ravager de un golpe."
         }
       ]
@@ -110,7 +110,7 @@
         },
         {
           "aldeano": "Julia la Constructora",
-          "foto": "./images/aldeano_fletcher.png",
+          "foto": "./images/aldeana_alex_fletcher.png",
           "comentario": "Lo uso para construir mega bases. No se rompe nunca."
         }
       ]
@@ -133,7 +133,7 @@
         },
         {
           "aldeano": "Laura la Viajera",
-          "foto": "./images/aldeano_butcher.png",
+          "foto": "./images/aldeana_alex_butcher.png",
           "comentario": "Un poco pesada pero vale la pena para explorar cuevas."
         }
       ]
@@ -156,7 +156,7 @@
         },
         {
           "aldeano": "Natalia la Speedrunner",
-          "foto": "./images/aldeano_fletcher.png",
+          "foto": "./images/aldeana_alex_fletcher.png",
           "comentario": "Imprescindibles para cualquier speedrun. Llegué al End en 15 min."
         }
       ]
@@ -173,13 +173,13 @@
       "imagen": "./images/tnt.png",
       "resenas": [
         {
-          "aldeano": "Oscar el Demolitor",
+          "aldeano": "Oscar el Demoledor",
           "foto": "./images/aldeano_herrero.png",
           "comentario": "Volé una montaña entera para mi mega base. Satisfactorio."
         },
         {
           "aldeano": "Patricia la Granjera",
-          "foto": "./images/aldeano_farmer.png",
+          "foto": "./images/aldeana_alex_farmer.png",
           "comentario": "Cuidado donde la ponen. Casi destruyen mi cultivo de trigo."
         }
       ]
